@@ -1,13 +1,15 @@
 import java.io.*;
 public class Read {
-    String readin(){
-        try (BufferedReader in = new BufferedReader(new FileReader("chiffrat.txt"))) {
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+    String readin() throws IOException {
+        String thisLine;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("chiffrat.txt"));
+            while ((thisLine = br.readLine()) != null) { // while loop begins here
+                System.out.println(thisLine);
+            }
+            return "none";
+        }finally {
+            return "";
         }
-
-        return "none";
     }
 }
