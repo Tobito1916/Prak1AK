@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
-
 public class Read {
+    String readin(){
+        return "none";
+    }
 }
