@@ -10,7 +10,7 @@ public class Read {
            }
 
        } catch (IOException e) {
-           System.out.println("Error");
+           System.out.println("Error");//f
        }
        return text;
    }
