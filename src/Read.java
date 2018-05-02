@@ -15,7 +15,5 @@ public class Read {
        return text;
    }
 
-public static void main(String args[]) throws IOException {
-       System.out.println(readin());
-}
+
 }
