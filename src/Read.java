@@ -1,13 +1,21 @@
 import java.io.*;
 public class Read {
-    String readin(){
-        try (BufferedReader in = new BufferedReader(new FileReader("chiffrat.txt"))) {
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+   static String readin() throws IOException {
+       String text = "";
+       try {
+           BufferedReader br = new BufferedReader(new FileReader("src/chiffrat.txt"));
+           while (br.ready()) { // while loop begins here
+               text = text + br.read();
 
-        return "none";
-    }
+           }
+
+       } catch (IOException e) {
+           System.out.println("Error");
+       }
+       return text;
+   }
+
+public static void main(String args[]) throws IOException {
+       System.out.println(readin());
+}
 }
