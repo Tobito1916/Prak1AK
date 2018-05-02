@@ -1,15 +1,21 @@
 import java.io.*;
 public class Read {
-    String readin() throws IOException {
-        String thisLine;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("chiffrat.txt"));
-            while ((thisLine = br.readLine()) != null) { // while loop begins here
-                System.out.println(thisLine);
-            }
-            return "none";
-        }finally {
-            return "";
-        }
-    }
+   static String readin() throws IOException {
+       String text = "";
+       try {
+           BufferedReader br = new BufferedReader(new FileReader("src/chiffrat.txt"));
+           while (br.ready()) { // while loop begins here
+               text = text + br.read();
+
+           }
+
+       } catch (IOException e) {
+           System.out.println("Error");
+       }
+       return text;
+   }
+
+public static void main(String args[]) throws IOException {
+       System.out.println(readin());
+}
 }
