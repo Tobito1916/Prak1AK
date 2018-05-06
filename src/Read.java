@@ -4,16 +4,11 @@ public class Read {
        String text = "";
        try {
            BufferedReader br = new BufferedReader(new FileReader("src/chiffrat.txt"));
-           while (br.ready()) { // while loop begins here
-               text += br.readLine();
-
-           }
-
+           // while loop begins here
+           while (br.ready()) text += br.readLine();
        } catch (IOException e) {
            System.out.println("Error");//f
        }
        return text;
    }
-
-
 }

@@ -1,15 +1,7 @@
-import java.io.IOException;
-
 public class DecipherUtil {
-
     public static void main(String[]args){
-        String input = "";
-        try {
-            input = Read.readin();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
+        String input = Read.readin();
 
         //Original char[] letterFrequency = {'E', 'N', 'I', 'S', 'R', 'A', 'T', 'D', 'H', 'U', 'L', 'C', 'G', 'M', 'O', 'B', 'W', 'F', 'K', 'Z', 'P', 'V', 'J', 'Y', 'X', 'Q'};
         char[] letterFrequency = {'E', 'N', 'S', 'R', 'I', 'A', 'D', 'T', 'H', 'U', 'L', 'G', 'O', 'C', 'M', 'K', 'F', 'B', 'W', 'Z', 'P', 'V', 'J', 'Y', 'X', 'Q'};
@@ -20,7 +12,6 @@ public class DecipherUtil {
 
     public static String decipherSubstitution (String cipherText, char[] letterFrequency){
 
-        int total = 1;
         int[] countLetters = new int[26];
         char[] letterOrder = new char[26];
         char[] cipherTextArray = cipherText.toCharArray();
@@ -31,7 +22,6 @@ public class DecipherUtil {
         for(int i=0; i<26; i++) letterOrder[i] = (char)('A' + i);   // Alphabet sortiert speichern
         for(char c : cipherTextArray) if(c<=90 && c>=65) {
             countLetters[c-65]++;  // Buchstabenhäufigkeit zählen
-            total++;    // Gesamtanzahl der Buchstaben
         }
 
         // Buchstaben sortieren
